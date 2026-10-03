@@ -15,6 +15,8 @@
   var attendingOnlyRows = document.querySelectorAll(".attending-only");
   var noteEl = document.getElementById("note");
   var noteCount = document.getElementById("note-count");
+  var guestsSelect = document.getElementById("guests");
+  var plusOneRow = document.getElementById("plus-one-row");
 
   /* ---------------- Calendar links ---------------- */
   function buildCalendarLinks() {
@@ -48,16 +50,25 @@
   }
 
   /* ---------------- Attending toggle ---------------- */
+  function updatePlusOneVisibility() {
+    var selected = form.querySelector('input[name="attending"]:checked');
+    var isYes = selected && selected.value === "yes";
+    var isTwo = guestsSelect.value === "2";
+    plusOneRow.hidden = !(isYes && isTwo);
+  }
+
   function onAttendingChange() {
     var selected = form.querySelector('input[name="attending"]:checked');
     var isYes = selected && selected.value === "yes";
     attendingOnlyRows.forEach(function (row) {
       row.hidden = !isYes;
     });
+    updatePlusOneVisibility();
   }
   form.querySelectorAll('input[name="attending"]').forEach(function (radio) {
     radio.addEventListener("change", onAttendingChange);
   });
+  guestsSelect.addEventListener("change", updatePlusOneVisibility);
 
   /* ---------------- Note char count ---------------- */
   if (noteEl && noteCount) {
@@ -98,6 +109,7 @@
       email: form.email.value.trim(),
       attending: selected ? selected.value : "",
       guests: selected && selected.value === "yes" ? form.guests.value : "0",
+      guestName: selected && selected.value === "yes" && form.guests.value === "2" ? form.guestName.value.trim() : "",
       dietary: form.dietary.value.trim(),
       note: form.note.value.trim(),
       website: form.org_website.value, // honeypot
@@ -111,7 +123,9 @@
     confirmation.focus();
     if (data.attending === "yes") {
       confirmHeading.textContent = "You're all set, " + data.name.split(" ")[0] + "!";
-      confirmBody.textContent = "We've saved your RSVP for " + data.guests + " guest" + (data.guests === "2" ? "s" : "") + ". We can't wait to see you on November 15th.";
+      var guestPart = "We've saved your RSVP for " + data.guests + " guest" + (data.guests === "2" ? "s" : "");
+      if (data.guests === "2" && data.guestName) guestPart += " (you + " + data.guestName + ")";
+      confirmBody.textContent = guestPart + ". We can't wait to see you on November 15th.";
     } else {
       confirmHeading.textContent = "Thanks for letting us know, " + data.name.split(" ")[0] + ".";
       confirmBody.textContent = "We're sorry you can't make it this time — we'll miss you!";
@@ -198,12 +212,13 @@
     if (!saved) return;
     form.name.value = saved.name || "";
     form.email.value = saved.email || "";
+    if (saved.guests) form.guests.value = saved.guests;
     if (saved.attending) {
       var radio = form.querySelector('input[name="attending"][value="' + saved.attending + '"]');
       if (radio) radio.checked = true;
       onAttendingChange();
     }
-    if (saved.guests) form.guests.value = saved.guests;
+    form.guestName.value = saved.guestName || "";
     form.dietary.value = saved.dietary || "";
     form.note.value = saved.note || "";
     if (noteCount) noteCount.textContent = form.note.value.length;

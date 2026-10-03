@@ -250,7 +250,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   padding: 28px 24px;
   text-align: center;
 }
-.detail-icon { color: var(--gold); margin-bottom: 14px; }
+.detail-icon { width: 28px; height: 28px; color: var(--gold); margin-bottom: 14px; }
 .detail-card h3 { font-size: 1rem; font-family: var(--font-body); font-weight: 700; color: var(--gold-soft); margin-bottom: 8px; }
 .detail-card p { color: var(--muted); margin: 0; }
 .detail-card a { color: var(--cream); }
