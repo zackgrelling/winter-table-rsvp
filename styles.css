@@ -245,10 +245,21 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 .detail-card {
   background: var(--panel);
+  background-size: cover;
+  background-position: center;
   border: 1px solid var(--panel-border);
   border-radius: var(--radius);
   padding: 28px 24px;
   text-align: center;
+}
+.detail-card--date {
+  background-image: linear-gradient(rgba(23, 25, 38, 0.82), rgba(23, 25, 38, 0.88)), url("images/date-time-bg.webp");
+}
+.detail-card--location {
+  background-image: linear-gradient(rgba(23, 25, 38, 0.82), rgba(23, 25, 38, 0.88)), url("images/og-image.jpg");
+}
+.detail-card--featuring {
+  background-image: linear-gradient(rgba(23, 25, 38, 0.82), rgba(23, 25, 38, 0.88)), url("images/featuring-bg.webp");
 }
 .detail-icon { width: 28px; height: 28px; color: var(--gold); margin-bottom: 14px; }
 .detail-card h3 { font-size: 1rem; font-family: var(--font-body); font-weight: 700; color: var(--gold-soft); margin-bottom: 8px; }
