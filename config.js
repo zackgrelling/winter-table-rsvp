@@ -7,7 +7,7 @@
 // instead of silently failing.
 // ---------------------------------------------------------------------------
 window.SITE_CONFIG = {
-  APPS_SCRIPT_URL: "",
+  APPS_SCRIPT_URL: "https://script.google.com/macros/s/AKfycbwfINwtJVQq4lzMMvU-9xeFYv6_9p-Pi9GrfNL9RE4IPihwmDrLNpFf41iA5eZL0i0f/exec",
   EVENT_TITLE: "La Table d'Hiver — Vin, Viande et Fromage",
   EVENT_START: "2026-11-15T16:00:00-08:00",
   EVENT_END: "2026-11-15T20:00:00-08:00",
