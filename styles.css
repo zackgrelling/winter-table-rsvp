@@ -262,6 +262,20 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   margin-top: 36px;
 }
 
+.event-notes {
+  max-width: 540px;
+  margin: 36px auto 0;
+  padding-top: 28px;
+  border-top: 1px solid var(--panel-border);
+  text-align: center;
+}
+.event-note {
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin-bottom: 10px;
+}
+.event-note:last-child { margin-bottom: 0; }
+
 /* ---------- RSVP ---------- */
 .rsvp { padding: 96px 0 120px; background: var(--bg-alt); }
 .rsvp-wrap { max-width: 640px; }
