@@ -457,13 +457,9 @@ legend { font-weight: 600; font-size: 0.9rem; margin-bottom: 10px; padding: 0; c
     radial-gradient(ellipse at 20% 0%, rgba(124, 50, 83, 0.25), transparent 55%),
     var(--bg);
 }
+.expect-hero .wrap { max-width: 620px; }
 .expect-h1 { font-size: clamp(2.2rem, 6vw, 3.4rem); margin-bottom: 0.2em; }
 .expect-hero .hero-sub { margin-bottom: 2.2em; }
-.expect-intro {
-  max-width: 620px;
-  margin: 0 auto;
-  text-align: center;
-}
 .expect-intro p { color: #d8d3e0; }
 .expect-but { font-family: var(--font-display); font-style: italic; color: var(--gold-soft); margin-top: 28px; }
 .expect-pullquote {
@@ -511,6 +507,11 @@ legend { font-weight: 600; font-size: 0.9rem; margin-bottom: 10px; padding: 0; c
   border-radius: 999px;
   font-size: 0.78rem;
   font-weight: 600;
+}
+.step-time--confirmed {
+  border-style: solid;
+  background: var(--gold);
+  color: #1d1400;
 }
 .step-tag {
   background: rgba(124, 50, 83, 0.25);
