@@ -17,6 +17,7 @@
   var noteCount = document.getElementById("note-count");
   var guestsSelect = document.getElementById("guests");
   var plusOneRow = document.getElementById("plus-one-row");
+  var expectLink = document.getElementById("expect-link");
 
   /* ---------------- Calendar links ---------------- */
   function buildCalendarLinks() {
@@ -126,9 +127,11 @@
       var guestPart = "We've saved your RSVP for " + data.guests + " guest" + (data.guests === "2" ? "s" : "");
       if (data.guests === "2" && data.guestName) guestPart += " (you + " + data.guestName + ")";
       confirmBody.textContent = guestPart + ". We can't wait to see you on November 15th.";
+      expectLink.hidden = false;
     } else {
       confirmHeading.textContent = "Thanks for letting us know, " + data.name.split(" ")[0] + ".";
       confirmBody.textContent = "We're sorry you can't make it this time — we'll miss you!";
+      expectLink.hidden = true;
     }
   }
 
