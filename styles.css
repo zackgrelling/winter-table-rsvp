@@ -481,12 +481,14 @@ legend { font-weight: 600; font-size: 0.9rem; margin-bottom: 10px; padding: 0; c
 }
 .weather-main { display: flex; align-items: center; gap: 18px; }
 .weather-icon {
+  display: inline-flex;
   flex: none;
   width: 38px;
   height: 38px;
+  overflow: hidden;
   color: var(--gold);
 }
-.weather-icon svg { width: 100%; height: 100%; display: block; }
+.weather-icon svg { width: 38px; height: 38px; max-width: 100%; max-height: 100%; display: block; }
 .weather-kicker {
   text-transform: uppercase;
   letter-spacing: 0.08em;
