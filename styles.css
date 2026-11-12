@@ -256,7 +256,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   background-image: linear-gradient(rgba(23, 25, 38, 0.82), rgba(23, 25, 38, 0.88)), url("images/date-time-bg.webp");
 }
 .detail-card--location {
-  background-image: linear-gradient(rgba(23, 25, 38, 0.82), rgba(23, 25, 38, 0.88)), url("images/og-image.jpg");
+  background-image: linear-gradient(rgba(23, 25, 38, 0.82), rgba(23, 25, 38, 0.88)), url("images/location-bg.jpg");
 }
 .detail-card--featuring {
   background-image: linear-gradient(rgba(23, 25, 38, 0.82), rgba(23, 25, 38, 0.88)), url("images/featuring-bg.webp");
