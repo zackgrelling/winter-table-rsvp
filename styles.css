@@ -476,6 +476,33 @@ legend { font-weight: 600; font-size: 0.9rem; margin-bottom: 10px; padding: 0; c
   margin: 18px auto 0;
   color: var(--muted);
 }
+.promptly-alert {
+  max-width: 720px;
+  margin: 36px auto 40px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: linear-gradient(135deg, rgba(205, 161, 84, 0.16), rgba(124, 50, 83, 0.2));
+  border: 1.5px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 22px 28px;
+  box-shadow: 0 8px 28px rgba(205, 161, 84, 0.18);
+}
+.promptly-icon { flex: none; width: 32px; height: 32px; color: var(--gold); }
+.promptly-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--gold-soft);
+  margin: 0 0 4px;
+}
+.promptly-message { margin: 0; color: var(--cream); font-size: 1.05rem; line-height: 1.5; }
+.promptly-message strong { color: var(--gold-soft); }
+@media (max-width: 560px) {
+  .promptly-alert { flex-direction: column; text-align: center; gap: 10px; padding: 24px; }
+}
+
 .steps-list {
   max-width: 720px;
   margin: 48px auto 0;
